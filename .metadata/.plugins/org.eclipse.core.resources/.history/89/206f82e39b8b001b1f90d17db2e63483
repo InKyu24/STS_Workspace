@@ -1,0 +1,13 @@
+package com.mulcam.ai.web.service;
+
+public class MemberService {
+	@Service
+	public class MemberService {
+		@Autowired
+		MemberDAO memberDAO;
+		
+		public void memberInsert(MemberVO m) throws Exception{
+			memberDAO.memberInsert(m);
+		}
+
+}

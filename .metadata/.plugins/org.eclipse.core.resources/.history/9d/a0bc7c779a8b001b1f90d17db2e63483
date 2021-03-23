@@ -1,0 +1,11 @@
+package com.mulcam.ai.web.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.mulcam.ai.web.vo.MemberVO;
+
+@Repository
+public interface MemberDAO {
+	
+	public void memberInsert(MemberVO m);
+}

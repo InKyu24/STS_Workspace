@@ -1,0 +1,5 @@
+package my.cik.web;
+
+public class HomeController {
+
+}

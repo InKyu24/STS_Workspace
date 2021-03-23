@@ -1,0 +1,6 @@
+$(document).ready(function() {
+	$("#loginBtn").click(function() {
+		// alert("alert text");
+		$.post("",{},function(){});
+	});
+});

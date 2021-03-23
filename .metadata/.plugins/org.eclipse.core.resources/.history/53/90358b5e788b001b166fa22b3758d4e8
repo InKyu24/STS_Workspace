@@ -1,0 +1,13 @@
+package my.cik.web;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HomeController {
+	
+	@ResponseBody
+	public String home() {
+		System.out.println("Hello Boot~!");
+		return "Hello Boot~!!!";
+	}
+}

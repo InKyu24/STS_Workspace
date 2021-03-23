@@ -1,0 +1,14 @@
+package my.cik.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController {
+	
+	@ResponseBody
+	public String home() {
+		System.out.println("Hello Boot~!");
+		return "Hello Boot~!!!";
+	}
+}
