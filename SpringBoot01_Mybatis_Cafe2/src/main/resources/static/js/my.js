@@ -3,10 +3,25 @@ $(document).ready(function(){
 		
 		let confirm_data=confirm("다음과 같이 주문하시겠습니까?\n"+items);		
 		if(confirm_data){
-			alert("주문완료");
-		}
-		window.close();
+			const basket = $.cookie("basket");
+
+			$.post("../order.jes",
+				  basket,
+				  function(data, status){	
+				  	console.log(data);
+				  	const obj=JSON.parse(data);
+				  	if(obj.order_group_no){	
+				  		alert("주문완료:[주문번호]"+obj.order_group_no);	
+				  		$.removeCookie("basket", { path: '/' });// 장바구니 쿠키 삭제	
+				  	}else{
+				  		alert(obj.msg);
+				  	}
+				  	window.close();			   
+				  }
+			);//end post() 			
+		}		
 	});
+
 
 	$("#anotherBtn").click(function(){		
 		window.close();
