@@ -1,9 +1,0 @@
-package com.mulcam.ai.util;
-
-public class CafeExeption extends Exception{
-
-	public CafeExeption(String message) {
-		super(message);
-	}
-
-}
