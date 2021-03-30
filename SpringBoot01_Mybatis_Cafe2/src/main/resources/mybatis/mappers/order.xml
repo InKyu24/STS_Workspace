@@ -26,5 +26,11 @@
 		]]>
 	</select>	
 
-	
+	<select id="select" resultType="orderVO">
+		<![CDATA[
+			select orderdate, ordermethod, product_name, quantity, order_group_no
+			from orders
+			where output=0 order by order_group_no 
+		]]>
+	</select>
 </mapper>

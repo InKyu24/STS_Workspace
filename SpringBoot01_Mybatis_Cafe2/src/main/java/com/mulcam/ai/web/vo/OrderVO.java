@@ -1,8 +1,9 @@
 package com.mulcam.ai.web.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderVO {
+public class OrderVO implements Serializable{
 	private String ordermethod, product_name;
 	private Long order_group_no, quantity;
 	private Date orderdate;

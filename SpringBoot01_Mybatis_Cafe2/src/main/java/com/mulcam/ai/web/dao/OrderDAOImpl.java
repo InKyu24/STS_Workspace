@@ -1,6 +1,7 @@
 package com.mulcam.ai.web.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ public class OrderDAOImpl {
 		long order_group_no=sqlSession.selectOne("mapper.order.order_group_no");
 		// System.out.println(order_group_no);
 		return order_group_no;
+	}
+
+	public List<OrderVO> ordersSelect() {
+		return sqlSession.selectList("mapper.order.select");
 	}
 
 }
