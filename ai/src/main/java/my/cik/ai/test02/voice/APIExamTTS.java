@@ -1,4 +1,4 @@
-package my.cik.ai.test2.voice;
+package my.cik.ai.test02.voice;
 
 //네이버 음성합성 Open API 예제
 import java.io.*;

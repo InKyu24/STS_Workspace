@@ -1,4 +1,4 @@
-package my.cik.ai.test3.trend;
+package my.cik.ai.test03.trend;
 
 //
 import java.io.*;

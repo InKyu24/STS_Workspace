@@ -1,4 +1,4 @@
-package my.cik.ai.test1.speech;
+package my.cik.ai.test01.speech;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package my.cik.ai.test.connect;
+package my.cik.ai.test00.connect;
 
 //
 import java.io.*;
