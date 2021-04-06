@@ -5,7 +5,7 @@
 <title>사진 촬영</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
 		$("#uploadBtn").click(function() {
 			alert("버튼 동작 확인");
@@ -25,12 +25,14 @@
 				}
 			});
 		});
-	});
+	}); -->
 
 </script>
 </head>
 <body>
-	<input type="file" id="myFileInput">
-	<input type="button" value="전송" id="uploadBtn">
+	<form action="../upload" method="post" enctype="multipart/form-data">
+	<input type="file" id="myFileInput" name="file">
+	<input type="submit" value="전송" id="uploadBtn">
+	</form>
 </body>
 </html>

@@ -12,16 +12,19 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploadController {
 	
 	@PostMapping("/upload")
-	public void upload(@RequestParam("file") MultipartFile file) {
+	public String upload(@RequestParam("file") MultipartFile file) {
 		System.out.println("파일인" + file + "이 들어옴");
 		try {
 			file.transferTo(new File("D:\\GITHUB\\STS_workspace\\SpringBoot01_Mybatis_Cafe2\\src\\main\\resources\\static\\img\\web_cam\\"+file.getOriginalFilename()));
+			return "upload 성공";
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return "upload 실패";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return "upload 실패";
 		}
 	}
 }
