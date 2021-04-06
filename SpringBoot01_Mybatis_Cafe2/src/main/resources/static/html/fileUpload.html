@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사진 촬영</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#uploadBtn").click(function() {
+			alert("버튼 동작 확인");
+			
+			let formData = new FormData();
+			formData.append('file', $("#myFileInput")[0].files[0]);
+			
+			$.ajax({
+				type : 'post',
+				url : '../upload',
+				cache : false,
+				data : formData,
+				processData : false,
+				contentType : false,
+				success : function(data) {
+					alert('파일 업로드 성공');
+				}
+			});
+		});
+	});
+
+</script>
+</head>
+<body>
+	<input type="file" id="myFileInput">
+	<input type="button" value="전송" id="uploadBtn">
+</body>
+</html>
