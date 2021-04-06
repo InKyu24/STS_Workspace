@@ -12,23 +12,20 @@ var localstream;
 		// 웹캠 켜기 버튼 처리
 		$("#camOnBtn").click(function(){
 			//alert("웹캠 버튼 작동");
-			navigator.getUserMedia = navigator.getUserMedia
-			|| navigator.webkitGetUserMedia
-			|| navigator.mozGetUserMedia;
+			navigator.getUserMedia = navigator.getUserMedia	|| navigator.webkitGetUserMedia	|| navigator.mozGetUserMedia;
 			if(navigator.getUserMedia) {
 				//alert("웹캠 존재 확인");
 				// navigator.getUserMedia( {비디오, 오디오 설정}, {웹캠 접근 성공 시 function}, {웹캠 접근 에러 시 function});
 				navigator.getUserMedia(
 					{video: true, audio:false},
 					function(stream){
+						alert("웹캠 접근 성공");
 						video=document.querySelector('video');
 						video.srcObject=stream;
 						localstream = stream; // stream 객체를 전역변수 localstream으로
 						video.onloadedmetadata=function(e){
-							video.play();
-						//alert("웹캠 접근 성공");
+							video.play();						
 						}
-						
 					},
 					function(){
 						alert("웹캠 접근 실패");
@@ -59,9 +56,9 @@ var localstream;
 			const file = new Blob([ new Uint8Array(array) ], {
 				type : 'image/jpeg'
 			});
-			const fileName = 'snapshot.jpg';
+			const fileName = 'web_snapshot_'+Date.now()+'.jpg'
 			let formData = new FormData();
-			formData.append('fileParam', file, fileName);
+			formData.append('file', file, fileName);
 			
 			$.ajax({
 				type : 'post',
