@@ -42,6 +42,12 @@ public class OrderService {
 			e.printStackTrace();
 		}
 	}
+	// 출고
+	public void update(long order_group_no) {
+		orderDAO.update(order_group_no);
+		pushOrders();
+	}
+	
 	// 주문 입력
 	public long insert(ArrayList<OrderVO> list) {
 		long order_group_no=orderDAO.ordersInsert(list);
@@ -50,11 +56,13 @@ public class OrderService {
 		return order_group_no; 
 	}
 	
+	// 모든 미출고 주문 조회
 	public List<OrderVO> ordersSelect() {
 		List<OrderVO> list = orderDAO.ordersSelect();
 		return list;
 	}
 	
+	// 주방 스크린으로 주문 상황 전송
 	public void pushOrders() {
 		System.out.println("pushOrders");
 		List<OrderVO> all_list = ordersSelect();
@@ -66,7 +74,7 @@ public class OrderService {
 			}
 		}
 	}
-	
+	// 주방스크린으로부터 오는 모든 요청 읽기
 	private class KitchenThread extends Thread{
 		Socket s;
 		ObjectInputStream in;

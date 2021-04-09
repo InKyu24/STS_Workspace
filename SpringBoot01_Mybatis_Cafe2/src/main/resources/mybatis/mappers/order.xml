@@ -33,4 +33,13 @@
 			where output=0 order by order_group_no 
 		]]>
 	</select>
+	
+	<update parameterType="long" id="update">
+		<![CDATA[
+			update orders
+			set output=1
+			where order_group_no=#{order_group_no}
+		]]>
+	</update>
+	
 </mapper>
