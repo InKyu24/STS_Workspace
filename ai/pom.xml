@@ -19,6 +19,12 @@
   </properties>
 
   <dependencies>
+  	<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-rekognition</artifactId>
+    <version>1.11.1001</version>
+</dependency>
+  	
      <dependency>
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
